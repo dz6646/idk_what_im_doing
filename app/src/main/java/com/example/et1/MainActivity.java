@@ -56,13 +56,15 @@ public class MainActivity extends AppCompatActivity {
         check2 = findViewById(R.id.check2);
         check3 = findViewById(R.id.check3);
 
-        if(count != 3) {
+        if(count != 3)
+        {
             count++;
         }
         else
         {
             count = 1;
         }
+
         if(Dan == 1)
         {
             check2.setEnabled(false);
@@ -89,17 +91,20 @@ public class MainActivity extends AppCompatActivity {
         int input;
         fNum = rnd.nextInt((99 - 10) + 1) + 10;
         sNum = rnd.nextInt((99 - 10) + 1) + 10;
-        if(count == 1) {
+        if(count == 1)
+        {
             sum = fNum + sNum;
         }
         else
         {
             sum += sNum;
         }
+
         if(count == 1) {
             fNumView.setText(Integer.toString(fNum));
             sNumView.setText(Integer.toString(sNum));
         }
+
         if(count == 2)
         {
             sNumView2.setText(Integer.toString((sNum)));
@@ -110,9 +115,7 @@ public class MainActivity extends AppCompatActivity {
     public void inputJava(View view) {
         Dan++;
         X_Or_Min = findViewById(R.id.XorMin);
-
         X_Or_Min2 = findViewById(R.id.XorMin2);
-
         X_Or_Min3 = findViewById(R.id.XorMin3);
 
         fNumView2 = findViewById(R.id.fNum2);
@@ -120,10 +123,7 @@ public class MainActivity extends AppCompatActivity {
         fNumView3 = findViewById(R.id.fNum3);
         sNumView3 = findViewById(R.id.sNum3);
 
-
         int input = 0;
-
-
 
         input1 = findViewById(R.id.Sum);
         input2 = findViewById(R.id.Sum2);
@@ -164,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
                 counter++;
             }
         }
+
         else
         {
             if(count == 1)
@@ -179,6 +180,7 @@ public class MainActivity extends AppCompatActivity {
                 X_Or_Min3.setImageResource(R.drawable.x);
             }
         }
+
         if(count == 1) {
             fNumView2.setText(Integer.toString(sum));
             sNumView2.setText(Integer.toString(sNum));
@@ -189,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
             sNum = rnd.nextInt((99 - 10) + 1) + 10;
             sNumView3.setText(Integer.toString(sNum));
         }
+
         if(count == 3)
         {
             //Toast
@@ -200,6 +203,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "You got " + counter + "/3 " + counter * (1/3.0) + "%", Toast.LENGTH_SHORT).show();
             }
         }
+
+
         game();
     }
 
