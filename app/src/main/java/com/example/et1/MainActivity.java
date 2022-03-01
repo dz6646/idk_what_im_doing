@@ -5,6 +5,7 @@ import java.util.Random;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     int sum;
     Random rnd = new Random();
     int count = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,11 +41,13 @@ public class MainActivity extends AppCompatActivity {
         int input;
         fNum = rnd.nextInt((99 - 10) + 1) + 1;
         sNum = rnd.nextInt((99 - 10) + 1) + 1;
-        fNumView.setText(fNum);
-        sNumView.setText(sNum);
+
+        fNumView.setText(Integer.toString(fNum));
+        sNumView.setText(Integer.toString(sNum));
     }
 
     public void inputJava(View view) {
+
         ImageView X_Or_Min;
         X_Or_Min = findViewById(R.id.XorMin);
         ImageView X_Or_Min2;
@@ -58,6 +62,12 @@ public class MainActivity extends AppCompatActivity {
         sNumView2 = findViewById(R.id.sNum2);
         fNumView3 = findViewById(R.id.fNum3);
         sNumView3 = findViewById(R.id.sNum3);
+        Button check1;
+        Button check2;
+        Button check3;
+        check1 = findViewById(R.id.check1);
+        check2 = findViewById(R.id.check2);
+        check3 = findViewById(R.id.check3);
         int input;
         EditText input1;
         String help;
@@ -97,16 +107,15 @@ public class MainActivity extends AppCompatActivity {
         }
         if(count == 1)
         {
-            fNumView2.setText(sum);
-            sNumView2.setText(rnd.nextInt((99 - 10) + 1) + 1);
+            fNumView2.setText(Integer.toString(sum));
+            sNumView2.setText(Integer.toString(rnd.nextInt((99 - 10) + 1) + 1));
         }
         else if(count == 2)
         {
-            fNumView3.setText(sum);
-            sNumView3.setText(rnd.nextInt((99 - 10) + 1) + 1);
+            fNumView3.setText(Integer.toString(sum));
+            sNumView3.setText(Integer.toString(rnd.nextInt((99 - 10) + 1) + 1));
         }
         game();
-
     }
 
     public void callGame(View view) {
