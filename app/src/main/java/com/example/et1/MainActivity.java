@@ -12,9 +12,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    int fNum;
-    int sNum;
-    int sum;
+    int fNum = 0;
+    int sNum = 0;
+    int sum = 0;
     Random rnd = new Random();
     int count = 0;
     TextView fNumView;
@@ -23,7 +23,18 @@ public class MainActivity extends AppCompatActivity {
     TextView fNumView2;
     TextView sNumView3;
     TextView fNumView3;
-    int counter;
+    int counter = 0;
+    EditText input1;
+    EditText input2;
+    EditText input3;
+    String help;
+    ImageView X_Or_Min;
+    ImageView X_Or_Min2;
+    ImageView X_Or_Min3;
+    Button check1;
+    Button check2;
+    Button check3;
+    int Dan = 1; // disabling buttons
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +45,17 @@ public class MainActivity extends AppCompatActivity {
 
     public void game()
     {
+
         fNumView = findViewById(R.id.fNum);
         sNumView = findViewById(R.id.sNum);
         fNumView2 = findViewById(R.id.fNum2);
         sNumView2 = findViewById(R.id.sNum2);
         fNumView3 = findViewById(R.id.fNum3);
         sNumView3 = findViewById(R.id.sNum3);
+        check1 = findViewById(R.id.check1);
+        check2 = findViewById(R.id.check2);
+        check3 = findViewById(R.id.check3);
+
         if(count != 3) {
             count++;
         }
@@ -47,14 +63,32 @@ public class MainActivity extends AppCompatActivity {
         {
             count = 1;
         }
-        TextView sNumView;
-        TextView fNumView;
+        if(Dan == 1)
+        {
+            check2.setEnabled(false);
+            check3.setEnabled(false);
+        }
+        else if(Dan == 2)
+        {
+            check2.setEnabled(true);
+            check1.setEnabled(false);
+            check3.setEnabled(false);
+        }
+        else if(Dan == 3)
+        {
+            check3.setEnabled(true);
+            check2.setEnabled(false);
+            check1.setEnabled(false);
+        }
+
+
+
 
         fNumView = findViewById(R.id.fNum);
         sNumView = findViewById(R.id.sNum);
         int input;
-        fNum = rnd.nextInt((99 - 10) + 1) + 1;
-        sNum = rnd.nextInt((99 - 10) + 1) + 1;
+        fNum = rnd.nextInt((99 - 10) + 1) + 10;
+        sNum = rnd.nextInt((99 - 10) + 1) + 10;
         if(count == 1) {
             sum = fNum + sNum;
         }
@@ -74,32 +108,43 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void inputJava(View view) {
-
-        ImageView X_Or_Min;
+        Dan++;
         X_Or_Min = findViewById(R.id.XorMin);
-        ImageView X_Or_Min2;
+
         X_Or_Min2 = findViewById(R.id.XorMin2);
-        ImageView X_Or_Min3;
+
         X_Or_Min3 = findViewById(R.id.XorMin3);
 
         fNumView2 = findViewById(R.id.fNum2);
         sNumView2 = findViewById(R.id.sNum2);
         fNumView3 = findViewById(R.id.fNum3);
         sNumView3 = findViewById(R.id.sNum3);
-        Button check1;
-        Button check2;
-        Button check3;
-        check1 = findViewById(R.id.check1);
-        check2 = findViewById(R.id.check2);
-        check3 = findViewById(R.id.check3);
-        int input;
-        EditText input1;
-        String help;
 
-        input1 = findViewById((R.id.Sum));
+
+        int input = 0;
+
+
+
+        input1 = findViewById(R.id.Sum);
+        input2 = findViewById(R.id.Sum2);
+        input3 = findViewById(R.id.Sum3);
         //input
-        help = input1.getText().toString();
-        input = Integer.parseInt(help);
+        if(count == 1)
+        {
+            help = input1.getText().toString();
+            input = Integer.parseInt(help);
+        }
+        else if(count == 2)
+        {
+            help = input2.getText().toString();
+            input = Integer.parseInt(help);
+        }
+        else if(count == 3)
+        {
+            help = input2.getText().toString();
+            input = Integer.parseInt(help);
+        }
+
 
         if(input == sum)
         {
@@ -141,17 +186,18 @@ public class MainActivity extends AppCompatActivity {
         if(count == 2)
         {
             fNumView3.setText(Integer.toString(sum));
+            sNum = rnd.nextInt((99 - 10) + 1) + 10;
             sNumView3.setText(Integer.toString(sNum));
         }
         if(count == 3)
         {
             //Toast
             if(counter == 0) {
-                Toast.makeText(this, "You got 0 out of 3 0%" , Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "You got 0/3 0%" , Toast.LENGTH_SHORT).show();
             }
             else
             {
-                Toast.makeText(this, "You got " + counter + " out of 3 " + counter * (1/3.0) + "%", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "You got " + counter + "/3 " + counter * (1/3.0) + "%", Toast.LENGTH_SHORT).show();
             }
         }
         game();
@@ -160,7 +206,18 @@ public class MainActivity extends AppCompatActivity {
     public void callGame(View view) {
         counter = 0;
         count = 0;
-        //RESET ALL
+        fNumView.setText("");
+        fNumView2.setText("");
+        fNumView3.setText("");
+        sNumView.setText("");
+        sNumView2.setText("");
+        sNumView3.setText("");
+        X_Or_Min.setImageResource(0);
+        X_Or_Min2.setImageResource(0);
+        X_Or_Min3.setImageResource(0);
+        Dan = 1;
+        check1.setEnabled(true);
+        check3.setEnabled(false);
         game();
     }
 }
