@@ -24,27 +24,25 @@
                 android:layout_height="50" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/fNum"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:text="TextView" />
+                android:layout_height="48dp" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="50" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/sNum"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:text="TextView" />
+                android:layout_height="48dp" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="50" />
 
             <EditText
-                android:id="@+id/editTextNumber"
+                android:id="@+id/Sum"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:ems="10"
@@ -56,7 +54,7 @@
                 android:layout_height="50" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/XorMin"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 tools:srcCompat="@tools:sample/avatars" />
@@ -66,7 +64,7 @@
                 android:layout_height="50" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/check1"
                 android:layout_width="match_parent"
                 android:layout_height="110"
                 android:text="Check" />
@@ -83,27 +81,25 @@
                 android:layout_height="50" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/fNum2"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:text="TextView" />
+                android:layout_height="48dp" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="50" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/sNum2"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:text="TextView" />
+                android:layout_height="48dp" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="50" />
 
             <EditText
-                android:id="@+id/editTextNumber"
+                android:id="@+id/Sum2"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:ems="10"
@@ -115,7 +111,7 @@
                 android:layout_height="50" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/XorMin2"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 tools:srcCompat="@tools:sample/avatars" />
@@ -125,7 +121,7 @@
                 android:layout_height="50" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/check2"
                 android:layout_width="match_parent"
                 android:layout_height="110"
                 android:text="Check" />
@@ -142,27 +138,25 @@
                 android:layout_height="50" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/fNum3"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:text="TextView" />
+                android:layout_height="48dp" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="50" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/sNum3"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:text="TextView" />
+                android:layout_height="48dp" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="50" />
 
             <EditText
-                android:id="@+id/editTextNumber"
+                android:id="@+id/Sum3"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:ems="10"
@@ -174,7 +168,7 @@
                 android:layout_height="50" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/XorMin3"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 tools:srcCompat="@tools:sample/avatars" />
@@ -184,7 +178,7 @@
                 android:layout_height="50" />
 
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/check3"
                 android:layout_width="match_parent"
                 android:layout_height="110dp"
                 android:text="Button" />
@@ -199,7 +193,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button8"
+            android:id="@+id/Reset"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
